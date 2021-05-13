@@ -20,5 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: ./
-        with:
-          milliseconds: 1000
+        id: metadata
+      - run: |
+          [ -z "${{ steps.metadata.outputs.shortSHA }}" ] && exit 1 || echo "shortSHA not empty"
+          [ -z "${{ steps.metadata.outputs.semver }}" ] && exit 1 || echo "semver not empty"
