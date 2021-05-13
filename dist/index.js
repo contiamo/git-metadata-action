@@ -104,14 +104,22 @@ const git_describe_1 = __webpack_require__(615);
 const git_1 = __webpack_require__(374);
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
+        let sha = '';
         try {
-            const sha = yield git_1.git(['rev-parse', '--short', 'HEAD']);
+            sha = yield git_1.git(['rev-parse', '--short', 'HEAD']);
             core.setOutput('shortSHA', sha);
+        }
+        catch (error) {
+            core.setFailed(error.message);
+        }
+        try {
             const semvar = git_describe_1.getSemanticVersion();
             core.setOutput('semvar', semvar);
         }
         catch (error) {
-            core.setFailed(error.message);
+            core.warning(error.message);
+            // usually means there are no tags, return the shortsha instead
+            core.setOutput('shortSHA', sha);
         }
     });
 }
