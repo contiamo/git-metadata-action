@@ -12,12 +12,12 @@ async function run(): Promise<void> {
   }
 
   try {
-    const semvar = getSemanticVersion()
-    core.setOutput('semvar', semvar)
+    const semver = getSemanticVersion()
+    core.setOutput('semver', semver)
   } catch (error) {
     core.warning(error.message)
     // usually means there are no tags, return the shortsha instead
-    core.setOutput('shortSHA', sha)
+    core.setOutput('semver', sha)
   }
 }
 

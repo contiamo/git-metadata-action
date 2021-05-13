@@ -21,6 +21,9 @@ jobs:
       - uses: actions/checkout@v2
       - uses: ./
         id: metadata
-      - run: |
-          [ -z "${{ steps.metadata.outputs.shortSHA }}" ] && exit 1 || echo "shortSHA not empty"
-          [ -z "${{ steps.metadata.outputs.semver }}" ] && exit 1 || echo "semver not empty"
+      - name: "short sha is not empty"
+        if: ${{  steps.metadata.outputs.shortSHA == '' }}
+        run: exit 1
+      - name: "semver is not empty"
+        if: ${{  steps.metadata.outputs.semver == '' }}
+        run: exit 1

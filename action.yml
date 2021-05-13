@@ -8,8 +8,8 @@ branding:
 outputs:
   shortSHA:
     description: 'output from git rev-parse --short HEAD'
-  semvar:
-    description: 'semvar value based on the git describe data, similar to https://github.com/mdomke/git-semver'
+  semver:
+    description: 'semver value based on the git describe data, similar to https://github.com/mdomke/git-semver'
 
 runs:
   using: 'node12'

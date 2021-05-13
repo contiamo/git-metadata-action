@@ -113,13 +113,13 @@ function run() {
             core.setFailed(error.message);
         }
         try {
-            const semvar = git_describe_1.getSemanticVersion();
-            core.setOutput('semvar', semvar);
+            const semver = git_describe_1.getSemanticVersion();
+            core.setOutput('semver', semver);
         }
         catch (error) {
             core.warning(error.message);
             // usually means there are no tags, return the shortsha instead
-            core.setOutput('shortSHA', sha);
+            core.setOutput('semver', sha);
         }
     });
 }
