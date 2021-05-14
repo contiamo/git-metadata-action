@@ -113,8 +113,10 @@ function run() {
             core.setFailed(error.message);
         }
         try {
+            // remove any `+` signs
+            const regex = /\+/i;
             const semver = git_describe_1.getSemanticVersion();
-            core.setOutput('semver', semver);
+            core.setOutput('semver', semver.replace(regex, '.'));
         }
         catch (error) {
             core.warning(error.message);
