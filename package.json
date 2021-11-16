@@ -30,7 +30,7 @@
     "simple-git": "^2.47.0"
   },
   "devDependencies": {
-    "@types/jest": "^26.0.23",
+    "@types/jest": "^27.0.2",
     "@types/node": "^14.14.45",
     "@typescript-eslint/parser": "^4.33.0",
     "@vercel/ncc": "^0.31.1",
