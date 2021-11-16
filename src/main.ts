@@ -9,7 +9,8 @@ async function run(): Promise<void> {
 
     core.setOutput('shortSHA', sha)
   } catch (error) {
-    core.setFailed(error.message)
+    const msg = error instanceof Error ? error.message : String(error)
+    core.setFailed(msg)
   }
 
   try {
@@ -18,7 +19,8 @@ async function run(): Promise<void> {
     const semver = getSemanticVersion()
     core.setOutput('semver', semver.replace(regex, '.'))
   } catch (error) {
-    core.warning(error.message)
+    const msg = error instanceof Error ? error.message : String(error)
+    core.warning(msg)
     // usually means there are no tags, return the shortsha instead
     core.setOutput('semver', sha)
   }

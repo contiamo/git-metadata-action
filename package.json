@@ -1,8 +1,8 @@
 {
-  "name": "typescript-action",
+  "name": "git-metadata-action",
   "version": "0.0.0",
   "private": true,
-  "description": "TypeScript template action",
+  "description": "Determine the next semantic semver and the sha for the current repo",
   "main": "lib/main.js",
   "scripts": {
     "build": "tsc",
@@ -15,12 +15,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/typescript-action.git"
+    "url": "git+https://github.com/contiamo/git-metadata-action.git"
   },
   "keywords": [
     "actions",
-    "node",
-    "setup"
+    "git"
   ],
   "author": "",
   "license": "MIT",
