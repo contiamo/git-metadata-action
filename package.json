@@ -27,7 +27,7 @@
     "@actions/core": "^1.6.0",
     "@actions/exec": "^1.0.4",
     "@contiamo/git-describe": "^1.0.0",
-    "simple-git": "^2.39.0"
+    "simple-git": "^2.47.0"
   },
   "devDependencies": {
     "@types/jest": "^26.0.23",
