@@ -1,16 +1,16 @@
-name: 'Get git metadata'
-description: 'Get the sha and version metadata from git'
-author: 'Contiamo GmbH'
+name: "Get git metadata"
+description: "Get the sha and version metadata from git"
+author: "Contiamo GmbH"
 branding:
-  icon: 'anchor'
-  color: 'blue'
+  icon: "anchor"
+  color: "blue"
 
 outputs:
   shortSHA:
-    description: 'output from git rev-parse --short HEAD'
+    description: "output from git rev-parse --short HEAD"
   semver:
-    description: 'semver value based on the git describe data, similar to https://github.com/mdomke/git-semver'
+    description: "semver value based on the git describe data, similar to https://github.com/mdomke/git-semver"
 
 runs:
-  using: 'node12'
-  main: 'dist/index.js'
+  using: "node16"
+  main: "dist/index.js"
