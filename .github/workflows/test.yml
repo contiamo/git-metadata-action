@@ -1,10 +1,10 @@
-name: 'build-test'
+name: "build-test"
 on: # rebuild any PRs and main branch changes
   pull_request:
   push:
     branches:
       - main
-      - 'releases/*'
+      - "releases/*"
 
 jobs:
   build: # make sure build/ci work properly
@@ -21,6 +21,11 @@ jobs:
       - uses: actions/checkout@v2
       - uses: ./
         id: metadata
+      - name: debug
+        run: |
+          echo "shortSHA=${{ steps.metadata.outputs.shortSHA }}" >> $GITHUB_STEP_SUMMARY
+          echo "semver=${{ steps.metadata.outputs.semver }}" >> $GITHUB_STEP_SUMMARY
+
       - name: "short sha is not empty"
         if: ${{  steps.metadata.outputs.shortSHA == '' }}
         run: exit 1
