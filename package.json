@@ -43,7 +43,7 @@
     "js-yaml": "^4.1.1",
     "npm-check-updates": "^19.1.2",
     "prettier": "3.7.3",
-    "ts-jest": "^29.4.5",
+    "ts-jest": "^29.4.6",
     "typescript": "^5.9.3"
   }
 }
