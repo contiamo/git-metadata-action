@@ -12,5 +12,5 @@ outputs:
     description: "semver value based on the git describe data, similar to https://github.com/mdomke/git-semver"
 
 runs:
-  using: "node16"
+  using: "node24"
   main: "dist/index.js"
