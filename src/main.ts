@@ -1,6 +1,6 @@
 import * as core from '@actions/core'
 import {getSemanticVersion} from '@contiamo/git-describe'
-import {git} from './git'
+import {git} from './git.js'
 
 async function run(): Promise<void> {
   let sha = ''
